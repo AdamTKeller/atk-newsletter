@@ -1,0 +1,16 @@
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">
+        <span class="brand-name">What I’ve Been Exploring</span>
+        <span class="brand-sub">This Week</span>
+      </span>
+    </a>
+    <nav class="masthead-nav">
+      <a href="{{ '/' | relative_url }}"{% if page.layout == 'home' %} aria-current="page"{% endif %}>Archive</a>
+      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle light or dark theme"></button>
+    </nav>
+  </div>
+</header>

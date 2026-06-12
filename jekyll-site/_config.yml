@@ -1,0 +1,37 @@
+# --- Site ---------------------------------------------------------------
+title: What I've Been Exploring This Week
+author: Adam T. Keller
+description: >-
+  A weekly read on the storylines running through system design and AI —
+  eight threads, one direction.
+
+# If you publish to a PROJECT page (https://<user>.github.io/<repo>/),
+# set baseurl to "/<repo>".  For a USER/ORG page (https://<user>.github.io/),
+# leave it as "".
+baseurl: ""
+url: ""
+
+# --- Build --------------------------------------------------------------
+markdown: kramdown
+permalink: /:year/:month/:day/
+timezone: America/New_York
+
+plugins:
+  - jekyll-feed          # generates /feed.xml (RSS)
+
+# Posts automatically use the issue layout — you don't need to declare it.
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: issue
+
+feed:
+  path: feed.xml
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
