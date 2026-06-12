@@ -8,7 +8,7 @@ description: >-
 # If you publish to a PROJECT page (https://<user>.github.io/<repo>/),
 # set baseurl to "/<repo>".  For a USER/ORG page (https://<user>.github.io/),
 # leave it as "".
-baseurl: ""
+baseurl: "/atk-newsletter"
 url: ""
 
 # --- Build --------------------------------------------------------------
