@@ -26,7 +26,7 @@ It's the wrong question. Production systems run both — agents where blast radi
 
 - [Build Agents, Not Pipelines](https://www.seangoedecke.com/build-agents-not-pipelines/) — Goedecke's framework
 - [How Grab Is Using AI Agents to Boost Team Productivity](https://blog.bytebytego.com/p/how-grab-is-using-ai-agents-to-boost)
-- [Verifying Agentic Development at Scale](https://links.tldrnewsletter.com/6tpNcS) — Cognition on Devin's async crossover
+- [Verifying Agentic Development at Scale](https://x.com/ido_pesok/status/2060416230641881336) — Cognition on Devin's async crossover
 
 ## 2. Human checking doesn't scale to agent volume
 
@@ -48,7 +48,7 @@ Spotify merged 2.5 million agent PRs and saw PR frequency jump 76%. Their Chief 
 Prose requirements are dying. Henrik Warne now communicates requirements to Claude as tests — the suite moved from safety net behind the work to specification in front of it. /goal makes "done" an explicit termination condition. AWS's SRE agent delivers a remediation spec consumed by another agent — the human reviews the handoff. Even the format follows: Anthropic's teams feed Claude HTML, not Markdown, because structure carries semantics prose flattens. Ambiguity is now the most expensive property a requirement can have.
 
 - [With Claude: Less Coding, More Testing](https://henrikwarne.com/2026/05/31/with-claude-less-coding-more-testing/)
-- [The Ultimate Guide to /goal](https://links.tldrnewsletter.com/Mf7cZO)
+- [The Ultimate Guide to /goal](https://x.com/Saboo_Shubham_/status/2054988166541770782)
 - [Building an End-to-End Agentic SRE Using AWS DevOps Agent](https://aws.amazon.com/blogs/devops/building-an-end-to-end-agentic-sre-using-aws-devops-agent/)
 - [The Unreasonable Effectiveness of HTML](https://claude.com/blog/using-claude-code-the-unreasonable-effectiveness-of-html)
 
@@ -79,7 +79,7 @@ Every fast system hides a deliberately under-utilized warm buffer. GKE Standby B
 "Value moved from output to judgment" stopped being a think-piece and became policy. Braze: 60%+ of committed code is AI-generated, and senior engineers were formally re-scoped to own specification and architecture, not implementation. Interviews are shifting from LeetCode to paid trial projects with AI allowed — coding signal got leveled, so judgment is what's left to measure. The backdrop: developers spend only 14% of their time writing code. The institutions are repricing toward the other 86%.
 
 - [How Braze's CTO Is Rethinking Engineering for the Agentic Era](https://stackoverflow.blog/2026/05/13/rethinking-engineering-for-the-agentic-area/)
-- [The Last Technical Interview](https://links.tldrnewsletter.com/UTLytb)
+- [The Last Technical Interview](https://steve-yegge.medium.com/the-last-technical-interview-bc13ddcf4564)
 - [A Practical Guide to Becoming an AI-Native Engineer](https://blog.bytebytego.com/p/a-practical-guide-to-becoming-an)
 
 ---
