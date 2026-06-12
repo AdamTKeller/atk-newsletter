@@ -1,0 +1,57 @@
+---
+layout: default
+---
+<main class="index">
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-eyebrow">Weekly · System design &amp; AI</div>
+      <h1 class="hero-title">{{ site.title }}</h1>
+      <p class="hero-blurb">{{ site.description | strip_newlines }}</p>
+      <div class="hero-by">Written by {{ site.author }}</div>
+    </section>
+
+    {%- assign posts = site.posts -%}
+    {%- assign featured = posts.first -%}
+    {% if featured %}
+    <a class="featured" href="{{ featured.url | relative_url }}">
+      <div class="featured-tag">Latest issue · No.&nbsp;{{ featured.number }}</div>
+      {% if featured.kicker %}<div class="featured-kicker">{{ featured.kicker }}</div>{% endif %}
+      <p class="featured-thesis">{{ featured.thesis | default: featured.kicker | default: featured.title }}</p>
+      <div class="featured-foot">
+        <span>{{ featured.week | default: featured.date | date: "%B %-d, %Y" }}</span>
+        <span class="dot"></span><span>{{ featured.content | split: '<h2' | size | minus: 1 }} threads</span>
+        <span class="dot"></span><span>{{ featured.content | number_of_words | divided_by: 200.0 | ceil }} min</span>
+        <span class="featured-cta">Read →</span>
+      </div>
+    </a>
+    {% endif %}
+
+    <section class="archive-section">
+      <div class="archive-head">
+        <h2>All issues</h2>
+        <span class="archive-count">{{ posts | size }} published</span>
+      </div>
+      <ol class="archive">
+        {% for post in posts %}
+        <li class="archive-row">
+          <a href="{{ post.url | relative_url }}">
+            <div class="ar-no">No.&nbsp;{{ post.number }}</div>
+            <div class="ar-main">
+              {% if post.kicker %}<div class="ar-kicker">{{ post.kicker }}</div>{% endif %}
+              <p class="ar-thesis">{{ post.thesis | default: post.kicker | default: post.title }}</p>
+              {% if post.topics %}
+              <ul class="ar-topics">{% for t in post.topics %}<li>{{ t }}</li>{% endfor %}</ul>
+              {% endif %}
+            </div>
+            <div class="ar-meta">
+              <span class="ar-date">{{ post.date | date: "%B %-d, %Y" }}</span>
+              <span class="ar-read">{{ post.content | number_of_words | divided_by: 200.0 | ceil }} min · {{ post.content | split: '<h2' | size | minus: 1 }} threads</span>
+            </div>
+            <div class="ar-arrow" aria-hidden="true">→</div>
+          </a>
+        </li>
+        {% endfor %}
+      </ol>
+    </section>
+  </div>
+</main>

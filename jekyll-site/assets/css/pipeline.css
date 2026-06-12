@@ -1,0 +1,35 @@
+/* ============================================================
+   Pipeline additions for the Jekyll build.
+   - reveal #issue-body after enhance.js restructures it
+   - link "note" sublabels (the "— context" text after a link)
+   - readable fallback styling if JS is off / before enhancement
+   ============================================================ */
+
+/* hidden until enhance.js promotes the markdown into the design;
+   <noscript> in <head> forces it visible when JS is unavailable */
+#issue-body { opacity: 0; transition: opacity .3s ease; }
+#issue-body[data-enhanced] { opacity: 1; }
+
+/* the trailing "— Goedecke's framework" note on some links */
+.thread-links a { flex-wrap: wrap; }
+.link-note { flex-basis: 100%; order: 9; font-size: 11.5px; line-height: 1.45; color: var(--ink-3); margin-top: 3px; }
+
+/* bracketed [01] thread index in the thread head */
+.thread-index { font-size: 12.5px; color: var(--accent); letter-spacing: .02em; }
+.thread-index::before { content: "["; color: var(--ink-3); }
+.thread-index::after { content: "]"; color: var(--ink-3); }
+
+/* ---- raw-markdown fallback (no JS / pre-enhance) ---- */
+#issue-body:not([data-enhanced]) > h1 { display: none; }
+#issue-body:not([data-enhanced]) h2 {
+  font-size: clamp(19px, 2.6vw, 24px); line-height: 1.25; font-weight: 700;
+  margin: 34px 0 14px; letter-spacing: -.015em;
+}
+#issue-body:not([data-enhanced]) h2::before { content: "## "; color: var(--accent); }
+#issue-body:not([data-enhanced]) p { color: var(--ink); line-height: 1.72; margin: 0 0 18px; max-width: 72ch; }
+#issue-body:not([data-enhanced]) em { font-style: normal; color: var(--accent); }
+#issue-body:not([data-enhanced]) a { color: var(--accent); text-decoration: none; }
+#issue-body:not([data-enhanced]) a:hover { text-decoration: underline; }
+#issue-body:not([data-enhanced]) ul { list-style: none; margin: 0 0 22px; padding: 0 0 0 16px; border-left: 2px solid var(--line-2); }
+#issue-body:not([data-enhanced]) li { padding: 7px 0; font-size: 14px; }
+#issue-body:not([data-enhanced]) hr { border: none; border-top: 1px dashed var(--line-2); margin: 30px 0; }
