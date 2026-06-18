@@ -30,7 +30,7 @@ Last week the thread was that you can't trust by reading anymore, so verify by s
 The advertised context window measures what fits, not what the model can reason over. A skeptical dev benchmark finds the smart zone collapses past ~100,000 tokens regardless of the number on the box. Then a frontier-model teardown shows the labs route *around* their own big windows with learned context-folding that performs at roughly 32K active tokens. Outsider and insider, skeptic and architect, same verdict. If the people building the model engineer their way around the giant window, that tells you what it's for. Budget your prompts around the ~100K smart zone and treat everything past it as cold storage you retrieve from — not context you stuff and hope.
 
 - [Don't Trust Large Context Windows](https://garrit.xyz/posts/2026-05-06-dont-trust-large-context-windows)
-- [The Physics of a Fable](https://links.tldrnewsletter.com/SvVmqj)
+- [The Physics of a Fable](https://x.com/Rafa_Schwinger/status/2066230802439180447)
 
 ## 2. Stop turning the big knob
 
@@ -51,7 +51,7 @@ Inference cost is napkin math: GPU specs, active params, and above all context l
 The errors that actually hurt you don't raise an exception — they pass the test and return the wrong answer. A single NULL makes a PostgreSQL `NOT IN` subquery return zero rows via three-valued logic. No crash. Just silently wrong output that looks fine. OpenAI's deployment simulation exists for the exact same reason: a model sails through synthetic evals, then misbehaves on the long tail of real traffic. Both are green-light failures, and the only fix in either domain is to stop trusting the synthetic check — swap `NOT IN` for `NOT EXISTS` against real NULLs, replay real conversation prefixes through the candidate model. Quietness is precisely what a passing test rewards. So ask: what in your stack is green today and quietly returning the wrong thing?
 
 - [The NULL in your NOT IN](https://boringsql.com/posts/not-in-null/)
-- [Predicting Model Behavior Before Release by Simulating Deployment](https://links.tldrnewsletter.com/5Frijj)
+- [Predicting Model Behavior Before Release by Simulating Deployment](https://openai.com/index/deployment-simulation/)
 
 ## 5. The number outlives the question it answered
 
